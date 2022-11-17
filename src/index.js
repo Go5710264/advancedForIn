@@ -8,10 +8,10 @@ const characteristics = {
     defence: 40,
 };
 
-let newPropertyOrder = [];
-const alphabeticalSorting = [];
-
 export default function propertySorting(obj, propArray) {
+    let newPropertyOrder = [];
+    const alphabeticalSorting = [];
+    
   propArray.forEach((prop) => {
     if (prop in obj) {
       newPropertyOrder.push({
@@ -38,8 +38,8 @@ export default function propertySorting(obj, propArray) {
 //     delete obj[key];
 //   };
   alphabeticalSorting.sort((a, b) => (a.key > b.key ? 1 : -1));
-
-  return newPropertyOrder = [...newPropertyOrder, ...alphabeticalSorting];
+  newPropertyOrder = [...newPropertyOrder, ...alphabeticalSorting];
+  return newPropertyOrder;
 }
 
 propertySorting(characteristics, ['health', 'attack']);

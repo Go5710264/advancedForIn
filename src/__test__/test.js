@@ -1,4 +1,4 @@
-import propertySorting from '../index.js';
+import propertySorting from '../index';
 
 const newCharacter = {
     name: 'мечник',
@@ -13,9 +13,9 @@ const result = [
     { key: 'level', value: 2 },
     { key: 'name', value: 'мечник' },
     { key: 'attack', value: 80 },
-    { key: 'health', value: 10 }
+    { key: 'health', value: 10 },
 ];
 
 test('return sorted array', () => {
-    expect(propertySorting(newCharacter, ['defence', 'level', 'name'])).toEqual(result)
+    expect(propertySorting(newCharacter, ['defence', 'level', 'name'])).toEqual(result);
 });
