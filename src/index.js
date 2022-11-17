@@ -1,17 +1,17 @@
 import './style.css';
 
 const characteristics = {
-    name: 'мечник',
-    health: 10,
-    level: 2,
-    attack: 80,
-    defence: 40,
+  name: 'мечник',
+  health: 10,
+  level: 2,
+  attack: 80,
+  defence: 40,
 };
 
 export default function propertySorting(obj, propArray) {
-    let newPropertyOrder = [];
-    const alphabeticalSorting = [];
-    
+  let newPropertyOrder = [];
+  const alphabeticalSorting = [];
+
   propArray.forEach((prop) => {
     if (prop in obj) {
       newPropertyOrder.push({
@@ -30,13 +30,6 @@ export default function propertySorting(obj, propArray) {
     delete obj[prop];
   });
 
-//   for (const key in obj) {
-//     alphabeticalSorting.push({
-//       key: key,
-//       value: obj[key]
-//     });
-//     delete obj[key];
-//   };
   alphabeticalSorting.sort((a, b) => (a.key > b.key ? 1 : -1));
   newPropertyOrder = [...newPropertyOrder, ...alphabeticalSorting];
   return newPropertyOrder;
